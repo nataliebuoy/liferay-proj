@@ -1,0 +1,4 @@
+Bundle-Name: userDisplay
+Bundle-SymbolicName: userDisplay
+Bundle-Version: 1.0.0
+Export-Package: userDisplay.constants
