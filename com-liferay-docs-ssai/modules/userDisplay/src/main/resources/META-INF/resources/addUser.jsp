@@ -9,17 +9,21 @@
 
 <aui:form action="<%= addUserURL %>" name="<portlet:namespace />fm">
         <aui:fieldset>
+        
             <aui:input name="first">
             	<aui:validator name="required" />
             	<aui:validator name="alpha" />
             </aui:input>
+            
             <aui:input name="last">
             	<aui:validator name="required" />
             	<aui:validator name="alpha" />
             </aui:input>
+            
             <aui:input name="email" type="email">
             	<aui:validator name="required" />
             </aui:input>
+            
             <aui:input name="screenName">
             	<aui:validator name="required" />
             </aui:input>
@@ -31,10 +35,17 @@
 	            <h5>Date of Birth</h5>
         	</liferay-ui:input-date> <p>
 	        	
-            
             <aui:input name="password1" type="password" >
             	<aui:validator name="required" />
+            	<aui:validator  name="custom"  errorMessage="Password should contain at least one
+ 								uppercase letter, one lowercase letter, and must be at least 4 characters long" >          
+					function(val) {
+						var passwordPattern = new RegExp("(?=.*[A-Z])(?=.*[a-z])(?=.{4,})");
+						return passwordPattern.test(val);
+					}
+	           </aui:validator>  
             </aui:input>
+            
             <aui:input name="password2" type="password">
             	<aui:validator name="required" />
             	<aui:validator name="equalTo">'#<portlet:namespace />password1'</aui:validator>
