@@ -9,8 +9,6 @@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
 <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
 
-<%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
-<%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
 
 <liferay-theme:defineObjects />
 
